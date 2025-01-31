@@ -1,19 +1,17 @@
 import os
-import webbrowser
 import gradio as gr
 from dotenv import load_dotenv
 
+from css.css import button_style, button_hover
+
 # Load environment variables
 load_dotenv()
-
-def open_url(url):
-    webbrowser.open(url)
 
 theme = gr.themes.Soft(
     primary_hue="lime",
 )
 
-with gr.Blocks(theme=theme) as demo:
+with gr.Blocks(theme=theme, css="body {background-color: #e8f5e9; text-align: center;} .button-container { display: flex; flex-direction: column; align-items: center; }") as demo:
     gr.Markdown("""
     # 🤖 GTHAU Hub
     """)
@@ -23,15 +21,15 @@ with gr.Blocks(theme=theme) as demo:
     gr.Markdown("""---""")
     
     with gr.Row():
-        gr.Button("Machines", variant="primary").click(lambda: open_url(os.getenv('MACHINES_URL')))
-        gr.Button("Model Repository", variant="secondary").click(lambda: open_url(os.getenv('MODEL_REPO_URL')))
+        gr.HTML(f'<a href="{os.getenv("MACHINES_URL")}" target="_blank"><button style="{button_style}" {button_hover}>Machines</button></a>')
+        gr.HTML(f'<a href="{os.getenv("MODEL_REPO_URL")}" target="_blank"><button style="{button_style}" {button_hover}>Model Repository</button></a>')
     
     with gr.Row():
-        gr.Button("GTHAU Website", variant="primary").click(lambda: open_url(os.getenv('GTHAU_URL')))
+        gr.HTML(f'<a href="{os.getenv("GTHAU_URL")}" target="_blank"><button style="{button_style}" {button_hover}>GTHAU Website</button></a>')
     
     gr.Markdown("""---""")
     
-    gr.Markdown("GTHAU - 2025 | @Sergio Esteban-Romero & @Iván Martín-Fernández")
+    gr.Markdown("GTHAU - 2025 ❤️ @Sergio Esteban-Romero & @Iván Martín-Fernández")
 
 demo.launch(server_name="0.0.0.0", server_port=7861)
 
