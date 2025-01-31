@@ -13,21 +13,22 @@ A Python project that implements a visually appealing Gradio interface with a ti
 ## Project Structure
 
 ```
-gradio-url-launcher
-├── src
-│   ├── main.py          # Entry point of the application
-│   ├── config
-│   │   └── settings.py  # Configuration settings
-│   ├── static
-│   │   └── styles.css    # CSS styles for the interface
-│   └── utils
-│       └── url_handler.py # Utility functions for URL operations
-├── tests
-│   └── test_url_handler.py # Unit tests for URL handling
-├── requirements.txt       # Project dependencies
-├── .gitignore             # Files to ignore in Git
-└── README.md              # Project documentation
+thau_hub
+THAU_hub/ 
+├── assets/ 
+│ └── thau_logo.jpeg 
+├── src/ 
+│ 
+└── main.py 
+├── config/ 
+│ └── .env 
+├── services/ 
+│ └── gthau-hub.service 
+├── requirements.txt 
+├── README.md 
+└── .gitignore
 ```
+You may need a .env file containing the IP Adress of your services.
 
 ## Installation
 
