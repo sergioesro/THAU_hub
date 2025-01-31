@@ -1,0 +1,14 @@
+[Unit]
+Description=GTHAU Hub Demo Service
+After=network.target
+
+[Service]
+User=sestebanro
+WorkingDirectory=/home/sestebanro/THAU_hub
+Environment="PATH=/home/sestebanro/.local/bin:/usr/local/bin:/usr/bin"
+ExecStart=/usr/bin/python3 main.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
