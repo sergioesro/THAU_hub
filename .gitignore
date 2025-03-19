@@ -2,3 +2,5 @@ venv
 gitignore
 .env
 .gradio
+__pycache__
+__pycache__/
